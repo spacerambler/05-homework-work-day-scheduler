@@ -1,17 +1,7 @@
 //objects
+var dateEl = $('#currentDay')
 
-//what functions do I ~want~ to ~create~?
+//Inputting text for the current day in heading
+var now = moment().format("dddd, MMMM Do YYYY")
 
-// Use event bubbling instead of doing individual lines for each button
-Object.addEventListener('click', event => {
-    console.log(event.target.innerText)
-})
-
-
-
-
-
-//when to reset to default
-
-
-// W
+dateEl.text(`${now}`)

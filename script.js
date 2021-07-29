@@ -1,6 +1,6 @@
 //objects
 
-//what functions do I ~want~ to ~create~? 
+//what functions do I ~want~ to ~create~?
 
 // Use event bubbling instead of doing individual lines for each button
 Object.addEventListener('click', event => {
@@ -14,4 +14,4 @@ Object.addEventListener('click', event => {
 //when to reset to default
 
 
-
+// W

@@ -12,6 +12,8 @@ var block9El = $('#15')
 var block10El = $('#16')
 var block11El = $('#17')
 var block12El = $('#18')
+var descriptionText = $('.description')
+var saveBtnEl = $('.saveBtn')
 
 //Inputting text for the current day in heading
 var today = moment().format("dddd, MMMM Do YYYY")
@@ -32,7 +34,7 @@ function highlightTime(){
 
         if(thisHour < time) {
             $(this).attr('class', 'col-10 description past')
-        } else if (thisHour === hour){
+        } else if (thisHour == time){
             $(this).attr('class', 'col-10 description present')
         } else {
             $(this).attr('class', 'col-10 description future')
@@ -42,6 +44,14 @@ function highlightTime(){
 
 highlightTime()
 
-//local storage, save inputs
-// var task7am = document.createElement(block1El)
-// console.log(task7am)
+//local storage, save inputs with button click
+
+var text = localStorage.getItem("schedule")
+descriptionText.textContent = text
+
+saveBtnEl.on('click', function(event){
+    event.preventDefault()
+    var parent = $(this).parent().attr('id')
+    localStorage.setItem(parent, JSON.stringify(text))
+})
+//not sure if I did this right
